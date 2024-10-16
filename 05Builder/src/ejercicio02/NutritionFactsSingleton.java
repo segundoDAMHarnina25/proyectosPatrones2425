@@ -1,49 +1,53 @@
 package ejercicio02;
 
-public class NutritionFacts {
+public class NutritionFactsSingleton {
 
 	// obligatorias
-	private  int servingSize;
-	private  int servings;
+	private int servingSize;
+	private int servings;
 	// opcionales
-	private  int calories;
-	private  int fat;
+	private int calories;
+	private int fat;
 
-	private NutritionFacts(Builder builder) {
+	private NutritionFactsSingleton(Builder builder) {
 		this.servingSize = builder.servingSize;
 		this.servings = builder.servings;
 		this.calories = builder.calories;
 		this.fat = builder.fat;
 	}
-	
-	public static class Builder{
-		private  int servingSize;
-		private  int servings;
+
+	public static class Builder {
+		private int servingSize;
+		private int servings;
 		// opcionales
-		private  int calories=0;
-		private  int fat=0;
-		
+		private int calories = 0;
+		private int fat = 0;
+		public static Builder instance;
+
 		private Builder(int servingSize, int servings) {
 			super();
 			this.servingSize = servingSize;
 			this.servings = servings;
 		}
-		
-		public static Builder builder(int servingSize, int servings) {
-			return new Builder(servingSize, servings); 
+
+		public static Builder getInstance(int servingSize, int servings) {
+			if (instance == null)
+				instance = new Builder(servingSize, servings);
+			return instance;
 		}
-		
+
 		public Builder calories(int calories) {
-			this.calories=calories;
+			this.calories = calories;
 			return this;
 		}
+
 		public Builder fat(int fat) {
-			this.fat=fat;
+			this.fat = fat;
 			return this;
 		}
-		
-		public NutritionFacts build() {
-			return new NutritionFacts(this);
+
+		public NutritionFactsSingleton build() {
+			return new NutritionFactsSingleton(this);
 		}
 
 	}
@@ -80,5 +84,4 @@ public class NutritionFacts {
 		this.fat = fat;
 	}
 
-	
 }
