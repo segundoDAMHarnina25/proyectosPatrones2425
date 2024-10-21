@@ -1,12 +1,10 @@
 package banco02.problema;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import banco02.problema.account.CreatorCuentaJoven;
 import banco02.problema.account.CreatorCuentaOro;
-import banco02.problema.account.CuentaJoven;
 import banco02.problema.account.CuentaOro;
 import banco02.problema.debitcard.CreatorDebitCardJoven;
 
