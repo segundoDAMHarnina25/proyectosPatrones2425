@@ -7,6 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.ListModel;
 import javax.swing.border.EmptyBorder;
+
+import easy.ClienteResponse;
+import easy.Mapper;
+
 import javax.swing.JList;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -19,6 +23,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.awt.event.ActionEvent;
 
 public class EjercicioAdapterOne extends JFrame {
@@ -56,7 +61,18 @@ public class EjercicioAdapterOne extends JFrame {
 		//Cuando recibas la lista de Clientes, segun om,
 //		debes convertir usando un Adapter para que se convierta en una 
 		//String[] que se le puede dar a JList
-		JList<String> list = new JList(new String[] {"valor hhhh"});
+		Mapper<Cliente, ClienteResponse> cliente2ClientResponse=new Mapper<Cliente, ClienteResponse>() {
+			
+			@Override
+			public ClienteResponse map(Cliente t) {
+				return new ClienteResponse(t.getNombre(), t.getCuenta().getSaldo());
+			}
+		};
+		String[] array = new ClientesOM().getAll().stream()
+			.map(cliente2ClientResponse::map)
+			.map(ClienteResponse::toString)
+			.collect(Collectors.toList()).toArray(new String[0]);
+		JList<String> list = new JList(array);
 		contentPane.add(list, BorderLayout.CENTER);
 		JButton btnGo = new JButton("GO!");
 		btnGo.addActionListener(new ActionListener() {
