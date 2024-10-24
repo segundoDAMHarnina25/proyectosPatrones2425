@@ -13,12 +13,6 @@ public class Armadura extends Caracteristica {
 	}
 
 	@Override
-	public Personaje decrementaElemento() {
-		System.out.println("Quiero degradar");
-		return personaje;
-	}
-
-	@Override
 	public int mostrarFuerza() {
 		return this.personaje.mostrarFuerza();
 	}

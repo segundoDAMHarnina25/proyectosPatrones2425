@@ -11,5 +11,9 @@ public abstract class Caracteristica implements Personaje {
 	public Personaje degradaTotal() {
 		return personaje.degradaTotal();
 	}
-
+	@Override
+	public Personaje decrementaElemento() {
+		System.out.println("Quiero degradar");
+		return personaje;
+	}
 }

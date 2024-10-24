@@ -12,11 +12,6 @@ public class Fuerza extends Caracteristica {
 	}
 
 	@Override
-	public Personaje decrementaElemento() {
-		return this.personaje;
-	}
-
-	@Override
 	public int mostrarFuerza() {
 		return this.personaje.mostrarFuerza() + 150;
 	}
