@@ -20,4 +20,9 @@ public class Aldeano implements Personaje {
 		return this;
 	}
 
+	@Override
+	public Personaje decrementaArmadura() {
+		return this;
+	}
+
 }

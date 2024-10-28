@@ -1,5 +1,7 @@
 package ejemploPersonaje;
 
+import java.lang.classfile.instruction.ReturnInstruction;
+
 public class Armadura extends Caracteristica {
 
 	public Armadura(Personaje personaje) {
@@ -15,6 +17,11 @@ public class Armadura extends Caracteristica {
 	@Override
 	public int mostrarFuerza() {
 		return this.personaje.mostrarFuerza();
+	}
+
+	@Override
+	public Personaje decrementaArmadura() {
+		return personaje;
 	}
 
 

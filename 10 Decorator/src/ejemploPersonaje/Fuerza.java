@@ -16,4 +16,12 @@ public class Fuerza extends Caracteristica {
 		return this.personaje.mostrarFuerza() + 150;
 	}
 
+	@Override
+	public Personaje decrementaArmadura() {
+		Personaje decrementaArmadura = personaje.decrementaArmadura();
+		if (personaje.getClass() != Armadura.class) {
+			return this;
+		}
+		return decrementaArmadura;
+	}
 }
