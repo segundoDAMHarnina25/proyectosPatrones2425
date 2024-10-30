@@ -1,16 +1,14 @@
 package ejercicio01Problema;
 
 public class Client {
-	ServicioBBDD servicioBBDD;
+	ServiceableBBDD servicioBBDD;
 
-	public Client() {
+	public Client(ServiceableBBDD servicioBBDD) {
 		super();
+		this.servicioBBDD = servicioBBDD;
 		System.out.println("arrancando el servicio de bbdd");
-		servicioBBDD=new ServicioBBDD();
-		//hace mas cosas
-		System.out.println("carga terminada");
 	}
-	
+
 	public void operarEnOtroSitio() {
 		System.out.println("no tiene que ver con la bbdd");
 	}
