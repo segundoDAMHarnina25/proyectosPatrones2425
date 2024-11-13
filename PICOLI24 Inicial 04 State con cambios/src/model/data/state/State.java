@@ -6,8 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
 import model.data.being.Adult;
 import model.data.being.Being;
+import model.data.being.Young;
 
 /**
  * En la version v3 quiero quitar el controlPara cambiar de edad
@@ -18,7 +21,7 @@ public class State {
 	private ArrayList<Being> adults = new ArrayList<>();
 	private ArrayList<Being> ancients = new ArrayList<>();
 
-	private int initialPopulation = 100;
+	private int initialPopulation = 10;
 
 	public State(int initialPopulation) {
 		this.initialPopulation=initialPopulation;
@@ -60,6 +63,16 @@ public class State {
 		}
 	}
 	
+	//Problema porque el estado hace un sondeo sobre TODOS los seres
+	void x() {
+		for (Iterator iterator = youngs.iterator(); iterator.hasNext();) {
+			Being being = (Being) iterator.next();
+			if(!(being.getBehaviour() instanceof Young)) {
+				iterator.remove();
+				adults.add(being);
+			}
+		}
+	}
 	private void bury() {
 		// sacar a los muertos
 		all.forEach(list -> list.removeIf(being -> !being.isAlive()));
