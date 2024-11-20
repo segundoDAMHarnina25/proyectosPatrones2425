@@ -111,7 +111,7 @@ public class Being {
 	}
 
 	public int getVitalNecesity() {
-		return vitalNecesity;
+		return behavior.getVitalNeeds();
 	}
 
 	public Behaviour getBehaviour() {

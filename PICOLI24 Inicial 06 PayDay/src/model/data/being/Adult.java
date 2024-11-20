@@ -44,4 +44,9 @@ public class Adult implements Behaviour {
 		return this;
 	}
 
+	@Override
+	public int getVitalNeeds() {
+		return Being.vitalNecesity;
+	}
+
 }

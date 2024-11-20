@@ -115,17 +115,6 @@ public class State {
 		}
 	}
 
-	// Problema porque el estado hace un sondeo sobre TODOS los seres
-	void x() {
-		for (Iterator iterator = youngs.iterator(); iterator.hasNext();) {
-			Being being = (Being) iterator.next();
-			if (!(being.getBehaviour() instanceof Young)) {
-				iterator.remove();
-				adults.add(being);
-			}
-		}
-	}
-
 	private void bury() {
 		// sacar a los muertos
 		all.forEach(list -> list.removeIf(being -> !being.isAlive()));

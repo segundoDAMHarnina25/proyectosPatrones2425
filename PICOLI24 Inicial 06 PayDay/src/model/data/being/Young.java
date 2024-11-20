@@ -48,4 +48,9 @@ public class Young implements Behaviour {
 		}
 		return this;
 	}
+
+	@Override
+	public int getVitalNeeds() {
+		return Being.vitalNecesity;
+	}
 }
