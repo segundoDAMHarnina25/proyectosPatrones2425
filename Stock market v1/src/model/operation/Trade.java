@@ -13,7 +13,7 @@ public abstract class Trade {
 	private Company companyId;
 	private boolean completed;
 	private Broker broker;
-	private Optional<List<Share>> shares;
+
 	
 	public abstract void operate();
 }
