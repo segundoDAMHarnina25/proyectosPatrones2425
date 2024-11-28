@@ -1,19 +1,29 @@
 package model.operation;
 
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Optional;
-
 import model.company.Company;
-import model.market.Broker;
-import model.market.Share;
 
 public abstract class Trade {
 	private Long id;
-	private Company companyId;
+	private Company companySource;
 	private boolean completed;
-	private Broker broker;
-
-	
+	private boolean closed;
+	////////////construtores
+	//////////propios
 	public abstract void operate();
+	/////////////objeto
+	private Long getId() {
+		return id;
+	}
+
+	public Company getCompany() {
+		return companySource;
+	}
+
+	private boolean isCompleted() {
+		return completed;
+	}
+	public boolean isClosed() {
+		return closed;
+	}
+	
 }

@@ -1,4 +1,4 @@
-package model.market;
+package model.interfaces.actions;
 
 import java.util.List;
 
@@ -6,5 +6,5 @@ import model.operation.Purchase;
 import model.operation.Sale;
 
 public interface BrokerActions {
- void findSaleTrade(Purchase compra, List<Sale> ventas);
+ Sale findSaleTrade(Purchase compra);
 }
