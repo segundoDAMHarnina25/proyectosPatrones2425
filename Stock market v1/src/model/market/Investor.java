@@ -25,10 +25,9 @@ public class Investor implements InvestorActions,Seller {
 		broker.findSaleTrade(new Purchase());
 	}
 	public BigDecimal getCapitalSharesByCompany(Company company) {
-		sharesByCompany.get(company).stream()
+		return sharesByCompany.get(company).stream()
 		.map(share->{return share.getCurrentValue();})
 		.reduce(BigDecimal.ZERO,BigDecimal::add);
-		return BigDecimal.ZERO;
 	}
 	@Override
 	public BigDecimal getCapitalAfterTrade() {
