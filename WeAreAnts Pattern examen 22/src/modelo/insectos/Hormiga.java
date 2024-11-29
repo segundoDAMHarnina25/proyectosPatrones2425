@@ -7,8 +7,6 @@ import java.util.Random;
 import modelo.soporte.Alimento;
 
 public class Hormiga {
-
-
 	List<Alimento> alimentos;
 	List<Integer> luchas;
 	private final int maxima=50;
