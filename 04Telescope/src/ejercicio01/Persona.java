@@ -6,8 +6,7 @@ public class Persona {
 	private String appellidos;
 	//optionals
 	private String phone;
-	private String color;
-	
+	private String color="rojo";
 	
 	public Persona(int id, String nombre, String appellidos) {
 		super();
@@ -16,6 +15,19 @@ public class Persona {
 		this.appellidos = appellidos;
 	}
 	
+	
+	public Persona(int id, String nombre, String appellidos, String phone) {
+		this(id, nombre, appellidos);
+		this.phone = phone;
+	}
+
+
+	public Persona(int id, String nombre, String appellidos, String phone, String color) {
+		this(id,nombre,appellidos,phone);
+		this.color = color;
+	}
+
+
 	private int getId() {
 		return id;
 	}

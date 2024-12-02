@@ -20,13 +20,15 @@ public class NutritionFacts {
 		private  int servingSize;
 		private  int servings;
 		// opcionales
-		private  int calories=0;
-		private  int fat=0;
+		private  int calories;
+		private  int fat;
 		
 		private Builder(int servingSize, int servings) {
 			super();
 			this.servingSize = servingSize;
 			this.servings = servings;
+			this.calories=0;
+			this.fat=0;
 		}
 		
 		public static Builder builder(int servingSize, int servings) {

@@ -9,8 +9,9 @@ class ClienteTest {
 	@Test
 	void test() {
 		Creator creador = null;
-		//coomo cliente elijo
+		//coomo usuario elijo
 		creador=new CreatorConcreteUno();
+		//sotware cliente
 		creador.factoryMethod();
 		Product producto=creador.getProducto();
 		System.out.println(producto.getClass());
