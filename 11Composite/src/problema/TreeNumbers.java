@@ -77,4 +77,9 @@ public class TreeNumbers {
                 ", treeNumbersList=" + treeNumbersList +
                 '}';
     }
+
+	private void setNumber(Integer number) {
+		if(!this.isComposite()) this.number = number;
+		else this.number=-1;
+	}
 }

@@ -61,18 +61,8 @@ public class EjercicioAdapterOne extends JFrame {
 		//Cuando recibas la lista de Clientes, segun om,
 //		debes convertir usando un Adapter para que se convierta en una 
 		//String[] que se le puede dar a JList
-		Mapper<Cliente, ClienteResponse> cliente2ClientResponse=new Mapper<Cliente, ClienteResponse>() {
-			
-			@Override
-			public ClienteResponse map(Cliente t) {
-				return new ClienteResponse(t.getNombre(), t.getCuenta().getSaldo());
-			}
-		};
-		String[] array = new ClientesOM().getAll().stream()
-			.map(cliente2ClientResponse::map)
-			.map(ClienteResponse::toString)
-			.collect(Collectors.toList()).toArray(new String[0]);
-		JList<String> list = new JList(array);
+		ClienteToStringArrayAdapter adapter=new ClienteToStringArrayAdapter();
+		JList<String> list = new JList(adapter.convert(new ClientesOM().getAll()));
 		contentPane.add(list, BorderLayout.CENTER);
 		JButton btnGo = new JButton("GO!");
 		btnGo.addActionListener(new ActionListener() {
