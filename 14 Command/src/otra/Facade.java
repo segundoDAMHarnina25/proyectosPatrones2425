@@ -1,19 +1,26 @@
 package otra;
 
 public class Facade {
- public void grabar(Libro libro) {
-	 
- }
- public void grabar(Socio socio) {
-	 
- }
- public void grabar(Prestamo prestamo) {
-	 
- }
- public void borrarLibro(Long idLibro) {
-	 
- }
- public void borrarSocio(Long idSocio) {
-	 
- }
+	RepoLibro repoLibro;
+	RepoSocio repoSocio;
+
+	public void grabar(Libro libro) {
+		repoLibro.grabar(libro);
+	}
+
+	public void grabar(Socio socio) {
+		repoSocio.grabar(socio);
+	}
+
+	public void grabar(Prestamo prestamo) {
+
+	}
+
+	public void borrar(IDLibro idLibro) {
+
+	}
+
+	public void borrarSocio(Long idSocio) {
+
+	}
 }
